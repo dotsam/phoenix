@@ -7,7 +7,7 @@ const DOUBLE_KEY_INTERVAL = 250;
 
 /* OTHERS */
 
-const SHELL_PATH = '/bin/zsh';
+const SHELL_PATH = '/opt/homebrew/bin/bash';
 const OSASCRIPT_PATH = '/usr/bin/osascript';
 
 const CENTER_WIDTH = 1280;
@@ -27,7 +27,7 @@ const MODAL_DURATION = 1;
 const MODAL_ANIMATION_DURATION = .2;
 const MODAL_WEIGHT = 24;
 
-const LEFT_WIDTH_PERCENTAGE = 40; // Set it to 50 if you want symmetric left and right sides' widths
+const LEFT_WIDTH_PERCENTAGE = 50; // Set it to 50 if you want symmetric left and right sides' widths
 const TOP_HEIGHT_PERCENTAGE = 50; // Set it to 50 if you want symmetric top and bottom sides' heights
 
 const QUIT_BLACKLIST = ['Finder'];
@@ -40,3 +40,6 @@ const SPACES_ALFRED_PRESELECT = true;
 const SPACES_ALFRED_PRESELECT_DELAY = 0.1;
 const SPACES_UPDATE_CYCLES = 5;
 const SPACES_UPDATE_INTERVAL = 500;
+
+// const DISPLAY_ORDER_OVERRIDE = [0, 3, 1, 2];
+const DISPLAY_ORDER_OVERRIDE = [1, 0, 2];
