@@ -28,6 +28,15 @@ function getNamedAnchor ( name ) {
     case 'sixths-4': return [0, 1];
     case 'sixths-5': return [false, 1];
     case 'sixths-6': return [1, 1];
+    /* EIGHTHS */
+    case 'eighths-1': return [0, 0];
+    case 'eighths-2': return [false, 0];
+    case 'eighths-3': return [false, 0];
+    case 'eighths-4': return [1, 0];
+    case 'eighths-5': return [0, 1];
+    case 'eighths-6': return [false, 1];
+    case 'eighths-7': return [false, 1];
+    case 'eighths-8': return [1, 1];
     /* DEFAULT */
     default: throw new Error ( `Undefined anchor named: "${name}"` );
   }
