@@ -17,7 +17,7 @@ setKeyHandler ( 'x', HYPER_SHIFT, () => {
 
   if ( !window ) return;
 
-  const frame = window.frame ();
+  const frame = window.screen ().frame ();
 
   window.setFrame ({
     x: frame.x,

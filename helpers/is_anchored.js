@@ -7,7 +7,7 @@ function isAnchored ( pointX, pointY, anchorX, anchorY ) {
 
   if ( anchorX === false && anchorY === false ) return false;
 
-  const frame = getFocusedScreen ().flippedFrame ();
+  const frame = getFocusedScreen ().flippedVisibleFrame ();
 
   if ( anchorX === false ) return Math.abs ( pointY - ( frame.y + frame.height * anchorY ) ) < 2;
 
