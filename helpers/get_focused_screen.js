@@ -5,6 +5,6 @@ function getFocusedScreen ( win = Window.focused () ) {
 
   if ( win ) return win.screen ();
 
-  return Screen.main ();
+  return Screen.main () || Screen.all () [0];
 
 }
