@@ -16,7 +16,7 @@ setKeysHandler ( (direction) => {
 
   let nextScreen = curScreen[direction]();
 
-  if ( DISPLAY_ORDER_OVERRIDE.length ) {
+  if ( typeof DISPLAY_ORDER_OVERRIDE !== 'undefined' && DISPLAY_ORDER_OVERRIDE.length ) {
     const allScreens = Screen.all();
 
     if (allScreens.length === DISPLAY_ORDER_OVERRIDE.length) {
