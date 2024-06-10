@@ -2,10 +2,10 @@
 /* MOVE TO NEXT/PREVIOUS SPACE */
 
 const move_space = [
-  ['pageUp', HYPER, ['next', false]],
-  ['pageDown', HYPER, ['previous', false]],
-  ['pageUp', HYPER_SHIFT, ['next', true]],
-  ['pageDown', HYPER_SHIFT, ['previous', true]]
+  ['pageUp', HYPER, [1, false]],
+  ['pageDown', HYPER, [-1, false]],
+  ['pageUp', HYPER_SHIFT, [1, true]],
+  ['pageDown', HYPER_SHIFT, [-1, true]]
 ];
 
 setKeysHandler ( (direction, follow) => {
@@ -14,14 +14,27 @@ setKeysHandler ( (direction, follow) => {
 
   if ( !window ) return;
 
-  const space = Space.active();
+  const screen = window.screen();
+  const spaces = screen.spaces();
 
-  let nextSpace = space[direction]();
+  if ( spaces.length < 2 ) return;
 
-  nextSpace.moveWindows([window]);
+  const space = window.screen().currentSpace();
+  const curSpaceIndex = spaces.findIndex ( s => s.isEqual ( space ) )
+
+  let nextIndex = curSpaceIndex + direction;
+
+  nextIndex = ( nextIndex < 0 ) ? spaces.length + nextIndex : nextIndex % spaces.length;
+
+  spaces[nextIndex].moveWindows([window]);
 
   if (follow) {
     window.focus();
+  } else {
+    // TODO: Focus another window on the screen we just left?
+    // "Another" is the trick here, we probably need to find another window from the same app if possible,
+    // or if not, "smartly" choose another
+    // screen.windows({ visible: true })[0].focus();
   }
 
 }, move_space );
