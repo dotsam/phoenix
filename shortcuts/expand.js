@@ -21,10 +21,10 @@ setKeyHandler ( 'space', HYPER, () => {
     expansionCache[hash] = currFrame;
 
     const nextFrame = {
-      x: sFrame.x,
-      y: sFrame.y,
-      width: sFrame.width,
-      height: sFrame.height
+      x: sFrame.x + FRAME_PADDING,
+      y: sFrame.y + FRAME_PADDING,
+      width: sFrame.width - (FRAME_PADDING * 2),
+      height: sFrame.height - (FRAME_PADDING * 2)
     };
 
     window.setFrame ( nextFrame );

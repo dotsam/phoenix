@@ -16,10 +16,10 @@ function setFrame ( x, y, width, height, window = Window.focused () ) {
           frame = screen.flippedVisibleFrame ();
 
     window.setFrame ({
-      x: frame.x + ( frame.width * x ),
-      y: frame.y + ( frame.height * y ),
-      width: frame.width * width,
-      height: frame.height * height
+      x: frame.x + ( frame.width * x ) + FRAME_PADDING,
+      y: frame.y + ( frame.height * y ) + FRAME_PADDING,
+      width: (frame.width * width) - (FRAME_PADDING * 2),
+      height: (frame.height * height) - (FRAME_PADDING * 2)
     });
 
   }
