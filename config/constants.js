@@ -13,7 +13,7 @@ const OSASCRIPT_PATH = '/usr/bin/osascript';
 const CENTER_WIDTH = 1280;
 const CENTER_HEIGHT = 800;
 
-const FRAME_PADDING = 16;
+const FRAME_PADDING = 8;
 
 const DEVTOOLS_SHRINK_HEIGHT = 75;
 
